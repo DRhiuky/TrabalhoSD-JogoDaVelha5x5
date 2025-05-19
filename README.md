@@ -15,7 +15,7 @@ Este projeto implementa um jogo da velha 5x5 para **3 jogadores remotos**, utili
 - 3 jogadores: **X**, **O** e **V**
 - Vence quem formar 3 símbolos iguais em linha, coluna ou diagonal
 - O jogo detecta **empate** ou **desconexões**
-- Após o fim, o servidor reinicia automaticamente para uma nova rodada
+- No fim, o servidor reinicia automaticamente para uma nova rodada
 
 ## Estrutura do Projeto
 
@@ -24,21 +24,23 @@ projeto/
 ├── cliente.py           # Lógica do cliente com interface terminal
 ├── servidor.py          # Lógica do servidor e controle do jogo
 ├── jogo.py              # Objeto remoto Pyro com regras do jogo
-├── log_jogo.txt         # Log das jogadas em tempo real
+├── config.py            # Organiza Endereços Ip e portas
+├── log_jogo.txt         # Log das jogadas criado em tempo real
+├── teste.py (opcional)  # Testa sequencia de jogadas no script jogadas
 └── jogadas.txt (opcional)  # Script de jogadas para modo de teste
 ```
 
-## Como Executar (Windows)
+## Como Executar
 
 ### 1. Verifique se o Python está instalado
-No terminal (CMD ou PowerShell), execute:
+No terminal, execute:
 
 ```powershell
 python --version
 ```
 
-Se não estiver instalado, baixe em: https://www.python.org/downloads  
-**Lembre-se de marcar a opção "Add Python to PATH" durante a instalação.**
+Se não estiver, baixe em: https://www.python.org/downloads  
+**Marcar a opção "Add Python to PATH" durante a instalação.**
 
 ---
 
@@ -118,11 +120,11 @@ Cada cliente deverá informar um nome. O símbolo (**X**, **O** ou **V**) será 
 
 ---
 
-### ⚙️ Arquivo `config.py`: Gerenciamento de IPs e Portas
+### Arquivo `config.py`: Gerenciamento de IPs e Portas
 
 O arquivo `config.py` centraliza a configuração de IPs e portas para facilitar o uso do projeto em diferentes ambientes.
 
-### 📡 Exemplos de uso
+### Exemplos de uso
 
 | Situação                             | Valor de `ip_server`               |
 |-------------------------------------|------------------------------------|
@@ -135,4 +137,4 @@ O arquivo `config.py` centraliza a configuração de IPs e portas para facilitar
 ## Extras
 
 - O arquivo `log_jogo.txt` registra todas as jogadas em tempo real
-- O modo de teste com `jogadas.txt` pode ser usado para simulações automáticas# TrabalhoSD-JogoDaVelha5x5
+- O modo de teste com `python teste.py` pode ser usado para simulações automáticas com `jogadas.txt`.

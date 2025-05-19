@@ -11,7 +11,7 @@ def monitorar_reinicio(jogo):
             jogo.reiniciar_jogo()
 
 def main():
-    jogo = JogoDaVelha(modo="normal")
+    jogo = JogoDaVelha(modo="normal") # "normal" para modo normal ou "teste" para modo teste 
     daemon = Pyro5.server.Daemon(host=ip_server, port=port_objeto)
     uri = daemon.register(jogo)
     
